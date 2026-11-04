@@ -1,5 +1,19 @@
 {
-  "name":"thomas-chassang-portfolio", "private":true, "type":"module", "version":"1.0.0",
-  "scripts":{"dev":"astro dev --host 0.0.0.0", "build":"astro build", "preview":"astro preview"},
-  "dependencies":{"astro":"^5.16.0"}, "devDependencies":{"typescript":"^5.7.0"}
+  "name": "thomas-chassang-portfolio",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev --host 0.0.0.0",
+    "build": "astro build",
+    "preview": "astro preview",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "astro": "^5.16.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "typescript": "^5.7.0"
+  }
 }
