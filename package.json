@@ -1,0 +1,5 @@
+{
+  "name":"thomas-chassang-portfolio", "private":true, "type":"module", "version":"1.0.0",
+  "scripts":{"dev":"astro dev --host 0.0.0.0", "build":"astro build", "preview":"astro preview"},
+  "dependencies":{"astro":"^5.16.0"}, "devDependencies":{"typescript":"^5.7.0"}
+}

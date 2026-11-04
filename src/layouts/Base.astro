@@ -1,0 +1,29 @@
+---
+import { site } from '../data/site';
+import '../styles/site.css';
+interface Props { title?: string; description?: string }
+const {title = 'Portfolio', description = 'Projets, compétences et réalisations de Thomas Chassang, développeur web et logiciel.'} = Astro.props;
+const path = Astro.url.pathname;
+---
+<!doctype html>
+<html lang="fr"><head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#081324" /><meta name="description" content={description} />
+  <meta property="og:title" content={`${title} · ${site.name}`} /><meta property="og:description" content={description} />
+  <meta property="og:image" content="/og-portfolio.svg" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <title>{title} · {site.name}</title>
+</head><body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+  <header class="nav"><div class="shell nav-inner">
+    <a class="identity" href="/"><span class="monogram">TC</span><span><strong>Thomas Chassang</strong><small>Développeur · Miinnee</small></span></a>
+    <nav aria-label="Navigation principale">
+      <a class:list={[{'selected': path === '/'}]} href="/">Accueil</a>
+      <a class:list={[{'selected':path.startsWith('/projets')}]} href="/projets/">Projets</a>
+      <a class:list={[{'selected':path.startsWith('/a-propos')}]} href="/a-propos/">À propos</a>
+      <a class="nav-contact" href={`mailto:${site.email}`}>Me contacter ↗</a>
+    </nav>
+  </div></header>
+  <slot />
+  <footer class="footer"><div class="shell footer-inner"><span>© {new Date().getFullYear()} Thomas Chassang · Portfolio Astro</span><span><a href={site.github} target="_blank" rel="noopener noreferrer">GitHub ↗</a> <a href={`mailto:${site.email}`}>Email ↗</a></span></div></footer>
+</body></html>

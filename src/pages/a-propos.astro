@@ -1,0 +1,44 @@
+---
+import Base from "../layouts/Base.astro";
+import { site } from "../data/site";
+---
+
+<Base title="À propos"
+  ><main id="contenu" class="shell inner-page about-page">
+    <span class="eyebrow">DÉVELOPPEUR · ÉTUDIANT </span><h1>
+      Thomas Chassang<span class="accent-dot">.</span>
+    </h1><p class="lead">
+      Étudiant en deuxième année de BUT Informatique, développeur passionné et
+      fondateur de Projet Chronos.
+    </p>
+    <div class="about-layout">
+      <section class="prose">
+        <h2>Ce qui me motive</h2><p>
+          Concevoir des applications utiles, apprendre auprès d'une équipe et
+          aller jusqu'au bout d'un projet. Je m'intéresse autant au
+          développement Java qu'aux interfaces web et aux bases de données.
+        </p><h2>Projet Chronos</h2><p>
+          Depuis août 2025, je pilote cette association d'événements Minecraft :
+          développement des mécaniques en Java, modélisation SQL, infrastructure
+          technique et site Nuxt connecté aux outils du projet.
+        </p><h2>Expériences techniques</h2><p>
+          <b>Dassault Systèmes</b> — création d'un site de formation des pompiers
+          intégrant de la WebXR (JavaScript, HTML, CSS).
+        </p>
+      </section><aside class="detail-aside">
+        <h2>Disponibilité</h2><p><b>{site.internship}</b></p><p>
+          Stage en développement web ou logiciel, avec possibilité de
+          prolongation en juillet et août.
+        </p><a class="button primary small" href={`mailto:${site.email}`}
+          >Me contacter ↗</a
+        ><a class="button ghost small" href={site.cv} download>Mon CV ↓</a><h2>
+          Technologies
+        </h2><div class="tags">{site.stack.map((t) => <span>{t}</span>)}</div><a
+          class="text-link"
+          href={site.github}
+          target="_blank"
+          rel="noopener noreferrer">GitHub / Miinnee ↗</a>
+      </aside>
+    </div>
+  </main></Base
+>

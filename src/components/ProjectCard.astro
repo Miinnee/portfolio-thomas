@@ -1,0 +1,8 @@
+---
+interface Props { frontmatter: {title:string;category:string;summary:string;cover:string;tags:string[]; featured?:boolean}; slug:string }
+const {frontmatter:project,slug}=Astro.props;
+---
+<a href={`/projets/${slug}/`} class="project-card">
+  <div class="project-art"><img src={project.cover} alt={`Illustration du projet ${project.title}`} loading="lazy" /></div>
+  <div class="project-body"><span class="eyebrow">{project.category}</span><h3>{project.title}<span aria-hidden="true">↗</span></h3><p>{project.summary}</p><div class="tags">{project.tags.slice(0,4).map(tag=><span>{tag}</span>)}</div></div>
+</a>

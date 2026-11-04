@@ -1,0 +1,33 @@
+---
+import Base from "../../layouts/Base.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+const modules = import.meta.glob("../../content/projects/*.md", {
+  eager: true,
+});
+const projects = Object.entries(modules)
+  .map(([path, mod]: any) => ({
+    slug: path.split("/").pop().replace(".md", ""),
+    ...mod,
+  }))
+  .sort(
+    (a, b) =>
+      (b.frontmatter.featured ? 1 : 0) - (a.frontmatter.featured ? 1 : 0),
+  );
+---
+
+<Base title="Projets"
+  ><main id="contenu" class="shell inner-page">
+    <span class="eyebrow">PORTFOLIO / PROJETS</span><h1>
+      Mes réalisations<span class="accent-dot">.</span>
+    </h1><p class="lead">
+      Du développement logiciel aux expériences interactives : quelques projets
+      qui racontent ma façon de travailler.
+    </p><div class="projects-grid">
+      {
+        projects.map((project) => (
+          <ProjectCard slug={project.slug} frontmatter={project.frontmatter} />
+        ))
+      }
+    </div>
+  </main></Base
+>
