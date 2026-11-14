@@ -1,7 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-import { site } from "../data/site";
+import { site, url } from "../data/site";
 const modules = import.meta.glob("../content/projects/*.md", { eager: true });
 const projects = Object.entries(modules)
   .map(([path, mod]: any) => ({
@@ -32,9 +32,9 @@ const projects = Object.entries(modules)
           bâtir des solutions complètes, du code à leur utilisation.
         </p>
         <div class="actions">
-          <a class="button primary" href="/projets/"
+          <a class="button primary" href={url("/projets/")}
             >Découvrir mes projets <span>↗</span></a
-          ><a class="button ghost" href={site.cv} download
+          ><a class="button ghost" href={url(site.cv)} download
             >Télécharger mon CV ↓</a>
         </div>
       </div><aside class="hero-side">
@@ -85,7 +85,7 @@ const projects = Object.entries(modules)
           <span class="eyebrow">01 / CE QUE JE CONSTRUIS</span><h2>
             Projets sélectionnés<span class="accent-dot">.</span>
           </h2>
-        </div><a class="text-link" href="/projets/">Tous les projets ↗</a>
+        </div><a class="text-link" href={url("/projets/")}>Tous les projets ↗</a>
       </div><div class="projects-grid">
         {
           projects
@@ -107,7 +107,7 @@ const projects = Object.entries(modules)
           Avec Projet Chronos, je développe des outils Java et web tout en
           pilotant une association dédiée aux événements Minecraft. Une manière
           concrète de réunir architecture, autonomie et travail d'équipe.
-        </p><a class="text-link" href="/a-propos/">En savoir plus sur moi ↗</a>
+        </p><a class="text-link" href={url("/a-propos/")}>En savoir plus sur moi ↗</a>
       </div><div class="skill-panel">
         <div class="skill-header">MES STACKS <span>↗</span></div><div
           class="skill-grid"

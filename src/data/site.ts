@@ -6,3 +6,6 @@ export const site = {
   internship: 'Stage de 10 semaines · 3 mai — 16 juillet 2027',
   stack: ['Java', 'Nuxt / Vue', 'JavaScript', 'SQL', 'C++', 'C#', 'Git', 'Flutter'],
 };
+
+// Préfixe un chemin interne avec la base du site (ex: /portfolio-thomas/ sur GitHub Pages).
+export const url = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${path.replace(/^\//, '')}`;

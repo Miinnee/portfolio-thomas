@@ -1,6 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
-import { site } from "../data/site";
+import { site, url } from "../data/site";
 ---
 
 <Base title="À propos"
@@ -31,7 +31,7 @@ import { site } from "../data/site";
           prolongation en juillet et août.
         </p><a class="button primary small" href={`mailto:${site.email}`}
           >Me contacter ↗</a
-        ><a class="button ghost small" href={site.cv} download>Mon CV ↓</a><h2>
+        ><a class="button ghost small" href={url(site.cv)} download>Mon CV ↓</a><h2>
           Technologies
         </h2><div class="tags">{site.stack.map((t) => <span>{t}</span>)}</div><a
           class="text-link"
