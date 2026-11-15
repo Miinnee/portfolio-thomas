@@ -16,6 +16,7 @@ J'ai fondé **Projet Chronos** en août 2025. Je coordonne les projets et partic
 - Des **plugins Java** pour les mécaniques de jeu et les événements.
 - Une **base de données SQL** et les environnements techniques associés.
 - Un **site sous Nuxt** qui relie les services et présente les informations aux utilisateurs.
+- **[M.O.N.D.A.Y](../monday/)**, l'application de bureau de gestion de l'équipe (pôles, tâches, planning, messagerie, IA et bot Discord), développée avec Claude Code.
 
 ## Ce que j'y apprends
 
