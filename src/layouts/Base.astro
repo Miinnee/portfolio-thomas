@@ -9,10 +9,13 @@ const path = Astro.url.pathname.startsWith(base) ? Astro.url.pathname.slice(base
 <!doctype html>
 <html lang="fr"><head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#081324" /><meta name="description" content={description} />
+  <meta name="theme-color" content="#F6F6F5" /><meta name="description" content={description} />
   <meta property="og:title" content={`${title} · ${site.name}`} /><meta property="og:description" content={description} />
   <meta property="og:image" content={url('/og-portfolio.svg')} />
   <link rel="icon" type="image/svg+xml" href={url('/favicon.svg')} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <title>{title} · {site.name}</title>
 </head><body>
   <a class="skip" href="#contenu">Aller au contenu</a>
@@ -22,9 +25,9 @@ const path = Astro.url.pathname.startsWith(base) ? Astro.url.pathname.slice(base
       <a class:list={[{'selected': path === '/'}]} href={url('/')}>Accueil</a>
       <a class:list={[{'selected':path.startsWith('/projets')}]} href={url('/projets/')}>Projets</a>
       <a class:list={[{'selected':path.startsWith('/a-propos')}]} href={url('/a-propos/')}>À propos</a>
-      <a class="nav-contact" href={`mailto:${site.email}`}>Me contacter ↗</a>
+      <a class="nav-contact" href={`mailto:${site.email}`}>Me contacter</a>
     </nav>
   </div></header>
   <slot />
-  <footer class="footer"><div class="shell footer-inner"><span>© {new Date().getFullYear()} Thomas Chassang · Portfolio Astro</span><span><a href={site.github} target="_blank" rel="noopener noreferrer">GitHub ↗</a> <a href={`mailto:${site.email}`}>Email ↗</a></span></div></footer>
+  <footer class="footer"><div class="shell footer-inner"><span>© {new Date().getFullYear()} Thomas Chassang</span><span><a href={site.github} target="_blank" rel="noopener noreferrer">GitHub</a> <a href={`mailto:${site.email}`}>Email</a></span></div></footer>
 </body></html>

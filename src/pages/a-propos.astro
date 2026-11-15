@@ -5,7 +5,7 @@ import { site, url } from "../data/site";
 
 <Base title="À propos"
   ><main id="contenu" class="shell inner-page about-page">
-    <span class="eyebrow">DÉVELOPPEUR · ÉTUDIANT </span><h1>
+    <span class="eyebrow">À propos</span><h1>
       Thomas Chassang<span class="accent-dot">.</span>
     </h1><p class="lead">
       Étudiant en deuxième année de BUT Informatique, développeur passionné et
@@ -30,14 +30,14 @@ import { site, url } from "../data/site";
           Stage en développement web ou logiciel, avec possibilité de
           prolongation en juillet et août.
         </p><a class="button primary small" href={`mailto:${site.email}`}
-          >Me contacter ↗</a
+          >Me contacter</a
         ><a class="button ghost small" href={url(site.cv)} download>Mon CV ↓</a><h2>
           Technologies
         </h2><div class="tags">{site.stack.map((t) => <span>{t}</span>)}</div><a
           class="text-link"
           href={site.github}
           target="_blank"
-          rel="noopener noreferrer">GitHub / Miinnee ↗</a>
+          rel="noopener noreferrer">GitHub / Miinnee</a>
       </aside>
     </div>
   </main></Base
