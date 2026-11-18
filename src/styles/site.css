@@ -49,6 +49,56 @@ button:focus-visible {
   background: var(--orange-50);
   color: var(--texte);
 }
+/* Thème sombre (par défaut) */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --gris-50: #0d0d0f;
+  --gris-200: #26262c;
+  --gris-400: #52525b;
+  --gris-500: #a1a1aa;
+  --texte: #f6f6f5;
+  --texte-doux: #a1a1aa;
+  --orange-600: #ff7a2e;
+  --orange-50: #3a1d0b;
+  --orange-bordure: #7a3410;
+  --surface: #17171b;
+  --inverse-bg: #f6f6f5;
+  --inverse-texte: #0d0d0f;
+  --inverse-hover: #e4e4e7;
+  --banner-bg: #17171b;
+  --texte-prose: #d4d4d8;
+}
+:root[data-theme="dark"] .focus-banner,
+:root[data-theme="dark"] .prose pre {
+  border: 1px solid var(--gris-200);
+}
+
+/* Bouton de thème */
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  margin-left: 4px;
+  padding: 0;
+  border: 1px solid var(--gris-200);
+  border-radius: var(--rayon-m);
+  background: var(--surface);
+  color: var(--texte-doux);
+  cursor: pointer;
+}
+.theme-toggle:hover {
+  color: var(--texte);
+  border-color: var(--gris-400);
+}
+.theme-toggle .icon-sun,
+:root[data-theme="dark"] .theme-toggle .icon-moon {
+  display: none;
+}
+:root[data-theme="dark"] .theme-toggle .icon-sun {
+  display: block;
+}
+
 .shell {
   width: min(1080px, calc(100% - 44px));
   margin: auto;
@@ -57,7 +107,7 @@ button:focus-visible {
   position: absolute;
   top: -100px;
   left: 20px;
-  background: var(--blanc);
+  background: var(--surface);
   padding: 10px;
   z-index: 100;
 }
@@ -70,7 +120,7 @@ button:focus-visible {
   position: sticky;
   top: 0;
   z-index: 40;
-  background: var(--blanc);
+  background: var(--surface);
   border-bottom: 1px solid var(--gris-200);
 }
 .nav-inner {
@@ -101,8 +151,8 @@ button:focus-visible {
   width: 36px;
   height: 36px;
   border-radius: var(--rayon-m);
-  background: var(--noir-900);
-  color: var(--blanc);
+  background: var(--inverse-bg);
+  color: var(--inverse-texte);
   font-weight: 800;
   font-size: 14px;
 }
@@ -128,12 +178,12 @@ button:focus-visible {
 }
 .nav nav .nav-contact {
   margin-left: 8px;
-  color: var(--blanc);
-  background: var(--noir-900);
+  color: var(--inverse-texte);
+  background: var(--inverse-bg);
 }
 .nav nav .nav-contact:hover {
-  color: var(--blanc);
-  background: var(--noir-700);
+  color: var(--inverse-texte);
+  background: var(--inverse-hover);
 }
 
 /* Accueil */
@@ -152,7 +202,7 @@ button:focus-visible {
   margin: 0;
   color: var(--texte-doux);
   border: 1px solid var(--gris-200);
-  background: var(--blanc);
+  background: var(--surface);
   border-radius: 999px;
   padding: 6px 14px;
   font-weight: 600;
@@ -211,7 +261,7 @@ button:focus-visible {
   background: var(--orange-600);
 }
 .ghost {
-  background: var(--blanc);
+  background: var(--surface);
   border-color: var(--gris-200);
 }
 .ghost:hover {
@@ -219,7 +269,7 @@ button:focus-visible {
 }
 .light {
   background: var(--blanc);
-  color: var(--texte);
+  color: var(--noir-900);
   flex-shrink: 0;
 }
 .light:hover {
@@ -232,7 +282,7 @@ button:focus-visible {
 
 /* Carte d'infos à côté du titre */
 .info-card {
-  background: var(--blanc);
+  background: var(--surface);
   border: 1px solid var(--gris-200);
   border-radius: var(--rayon-xl);
   padding: 8px 24px;
@@ -264,7 +314,7 @@ button:focus-visible {
   gap: 30px;
   padding: 32px 36px;
   border-radius: var(--rayon-xl);
-  background: var(--noir-900);
+  background: var(--banner-bg);
   color: var(--blanc);
 }
 .focus-banner .eyebrow {
@@ -326,7 +376,7 @@ button:focus-visible {
 .project-card {
   overflow: hidden;
   border: 1px solid var(--gris-200);
-  background: var(--blanc);
+  background: var(--surface);
   border-radius: var(--rayon-xl);
   transition: border-color 0.15s;
 }
@@ -400,7 +450,7 @@ button:focus-visible {
 .detail-aside {
   border: 1px solid var(--gris-200);
   border-radius: var(--rayon-xl);
-  background: var(--blanc);
+  background: var(--surface);
   padding: 26px;
 }
 .skill-header {
@@ -482,7 +532,7 @@ button:focus-visible {
 .prose {
   max-width: 680px;
   font-size: 16px;
-  color: var(--noir-700);
+  color: var(--texte-prose);
 }
 .prose h2 {
   color: var(--texte);
@@ -519,7 +569,7 @@ button:focus-visible {
 .prose code {
   font-family: var(--police-mono);
   font-size: 0.88em;
-  background: var(--blanc);
+  background: var(--surface);
   border: 1px solid var(--gris-200);
   border-radius: 6px;
   padding: 1px 6px;
@@ -573,7 +623,7 @@ button:focus-visible {
 
 .footer {
   border-top: 1px solid var(--gris-200);
-  background: var(--blanc);
+  background: var(--surface);
   padding: 28px 0;
   color: var(--gris-500);
   font-size: 13px;
